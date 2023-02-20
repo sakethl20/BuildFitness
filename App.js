@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, Image, View, Button, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
-export default function App() {
+function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styler.container}>
@@ -27,11 +28,22 @@ export default function App() {
     </View>
   );
 }
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>{
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    }</NavigationContainer>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    //backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -52,7 +64,7 @@ const styles = StyleSheet.create({
 const styler = StyleSheet.create({
   container: {
     flex: 0,
-    backgroundColor: '#eee',
+    //backgroundColor: '#eee',
     alignItems: 'center',
     justifyContent: 'center',
   },
