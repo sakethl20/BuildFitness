@@ -11,7 +11,7 @@ export default function App() {
       <TouchableOpacity>
         <Image 
           fadeDuration={1000}
-          source={require('./assets/tateArrest.jpeg')} 
+          source={require('./app/assets/tateArrest.jpeg')} 
           style={{ width: 350, height: 200 }}
         />
       </TouchableOpacity>
