@@ -1,40 +1,76 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Image, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function HomeScreen() {
+import HomeScreen from './app/screens/HomeScreen';
+import DetailsScreen from './app/screens/DetailsScreen';
+import FeedScreen from './app/screens/FeedScreen';
+import MessagesScreen from './app/screens/MessagesScreen';
+
+
+const Stack = createNativeStackNavigator();
+
+function StackScreen() {
   return (
-    <View style={styles.container}>
-      <View style={styler.container}>
-        <Text>My unmatched perspicacity, coupled with my sheer indefatigability, makes me a master in all human endeavors</Text>
-      </View>
-      <TouchableOpacity>
-        <Image 
-          fadeDuration={1000}
-          source={require('./app/assets/tateArrest.jpeg')} 
-          style={{ width: 350, height: 200 }}
-        />
-      </TouchableOpacity>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Join the New World"
-          onPress={()=> alert('Welcome to the New World')}
-          color="white"
-          style={styles.button}
-        />
-      </View>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{
+            title: 'Main',
+            headerStyle: {
+              backgroundColor: 'orange',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+      />
+    </Stack.Navigator>
   );
 }
-const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>{
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Welcome',
+          headerStyle: {
+            backgroundColor: 'orange',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{
+            title: 'Main',
+            headerStyle: {
+              backgroundColor: 'orange',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen 
+          name="Feed" 
+          component={FeedScreen}  
+        />
+        <Stack.Screen 
+          name="Messages" 
+          component={MessagesScreen} 
+        />
       </Stack.Navigator>
     }</NavigationContainer>
   );
