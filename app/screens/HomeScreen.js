@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Image, View, Button, ImageBackground } from 'react-native';
+import { StyleSheet, Text, Image, View, Button, ImageBackground, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 function HomeScreen({ navigation }) {
@@ -8,16 +8,11 @@ function HomeScreen({ navigation }) {
         <ImageBackground source={{ uri: "https://wallpapers.com/images/hd/chris-bumstead-speed-bag-in-backdrop-ch17w7eqyveckhfr.jpg" }} style={styles.backgroundImage}>
           <View style={styles.content}>
             <Text style={styles.text}>"The meaning of life is not simply to exist, to survive, but to move ahead, to go up, to conquer." - Arnold Schwarzenegger</Text>
-            <View style={styles.buttonContainer}>
-              <Button
-                title="Join Fitness"
-                onPress={() => navigation.navigate('Details')}
-                color="white"
-                style={styles.button}
-              />
-            </View>
           </View>
         </ImageBackground>
+        <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Details')}>
+            <Text style={styles.buttonText}>Start Your Journey</Text>
+        </TouchableOpacity>
         <StatusBar style="auto" />
       </View>
     );
@@ -39,24 +34,35 @@ function HomeScreen({ navigation }) {
     },
     text: {
       color: 'white',
-      fontSize: 24,
+      fontSize: 23,
       textAlign: 'center',
-      margin: 20,
+      margin: 30,
     },
     buttonContainer: {
-      position: 'absolute',
-      bottom: 60,
-      width: '50%',
-      alignSelf: 'center',
+      position: 'flex-end',
+    //   bottom: 0,
+      width: '100%',
+      alignSelf: 'flex-end',
       backgroundColor: "orange",
-      borderRadius: 4,
-      height: 50,
+      borderRadius: 2,
+      height: 90,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      fontSize: 50
     },
     button: {
-      color: 'white'
+      color: 'white',
+      fontSize: 40
     },
+    buttonTitle: {
+        fontSize: 40,
+        color: 'white',
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 25,
+    },
+      
   });
   
   export default HomeScreen;

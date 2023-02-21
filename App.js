@@ -10,45 +10,17 @@ import MessagesScreen from './app/screens/MessagesScreen';
 
 const Stack = createNativeStackNavigator();
 
-function StackScreen() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-          name="Details"
-          component={DetailsScreen}
-          options={{
-            title: 'Main',
-            headerStyle: {
-              backgroundColor: 'orange',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
-          }}
-      />
-    </Stack.Navigator>
-  );
-}
-
 export default function App() {
   return (
     <NavigationContainer>{
       <Stack.Navigator>
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          title: 'Welcome',
-          headerStyle: {
-            backgroundColor: 'orange',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="Details"
           component={DetailsScreen}
@@ -76,32 +48,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    //backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonContainer: {
-    margin: 20,
-    backgroundColor: "orange",
-    borderRadius: 4,
-    width: 200,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  button: {
-    color: 'white'
-  },
-});
-
-const styler = StyleSheet.create({
-  container: {
-    flex: 0,
-    //backgroundColor: '#eee',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
