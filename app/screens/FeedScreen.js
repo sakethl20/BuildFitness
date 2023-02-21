@@ -1,45 +1,49 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, View, Button, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function FeedScreen() {
-    return (
+    const navigation = useNavigation();
+
+    return (  
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chest')}>
             <Text style={styles.buttonText}>Chest</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Back')}>
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Shoulders')}>
             <Text style={styles.buttonText}>Shoulders</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Abs')}>
             <Text style={styles.buttonText}>Abs</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Biceps')}>
             <Text style={styles.buttonText}>Biceps</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Triceps')}>
             <Text style={styles.buttonText}>Triceps</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Forearms')}>
             <Text style={styles.buttonText}>Forearms</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Glutes')}>
             <Text style={styles.buttonText}>Glutes</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Hamstrings')}>
             <Text style={styles.buttonText}>Hamstrings</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Quadriceps')}>
             <Text style={styles.buttonText}>Quadriceps</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Calves')}>
             <Text style={styles.buttonText}>Calves</Text>
           </TouchableOpacity>
         </View>
       </View>
+      
     );
   }
 

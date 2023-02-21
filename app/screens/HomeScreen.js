@@ -45,7 +45,7 @@ function HomeScreen({ navigation }) {
       alignSelf: 'flex-end',
       backgroundColor: "orange",
       borderRadius: 2,
-      height: 90,
+      height: 80,
       alignItems: 'center',
       justifyContent: 'center',
       fontSize: 50
@@ -60,7 +60,7 @@ function HomeScreen({ navigation }) {
     },
     buttonText: {
         color: 'white',
-        fontSize: 25,
+        fontSize: 20,
     },
       
   });
