@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {AsyncStorage} from '@react-native-async-storage/async-storage'
 
 import HomeScreen from './app/screens/HomeScreen';
 import DetailsScreen from './app/screens/DetailsScreen';
@@ -34,14 +35,7 @@ export default function App() {
           name="Details"
           component={DetailsScreen}
           options={{
-            title: 'Main',
-            headerStyle: {
-              backgroundColor: 'orange',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
+            headerShown: false,
           }}
         />
         <Stack.Screen 
