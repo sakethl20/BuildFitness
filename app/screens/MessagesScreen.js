@@ -14,15 +14,14 @@ function MessagesScreen({navigation}) {
     }
     return (
         <View style={styles.container}>
-            <View style={styles.logOutContainer}>
-                <TouchableOpacity 
-                    style={styles.logOutButton}
-                    onPress={handleSignOut}>
-                    <Text style={styles.buttonText2}>Logout</Text>
-                </TouchableOpacity>
-            </View>
-            
             <View style={styles.header}>
+                <View style={styles.logOutContainer}>
+                    <TouchableOpacity 
+                        style={styles.logOutButton}
+                        onPress={handleSignOut}>
+                        <Text style={styles.buttonText2}>Logout</Text>
+                    </TouchableOpacity>
+                </View>
                 <View style={styles.avatarContainer}>
                 <Image style={styles.avatar} source={{ uri: 'https://cdn-icons-png.flaticon.com/512/5146/5146829.png' }} />
                 </View>
@@ -58,13 +57,13 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 0,
         left: 0,
-        padding: 1, // add padding
-        margin: 8, // add margin
+        padding: 1, 
+        margin: 8, 
         alignItems: 'flex-start',
         backgroundColor: 'lightgray',
-        borderWidth: 1, // add border
-        borderColor: 'gray', // set border color
-        borderRadius: 5, // set border radius
+        borderWidth: 1, 
+        borderColor: 'gray', 
+        borderRadius: 5, 
       },
       logOutButton: {
         paddingHorizontal: 10,
@@ -77,18 +76,17 @@ const styles = StyleSheet.create({
         fontWeight: 'fine',
       },
     header: {
-        padding: 10,
+        padding: 30,
         flexDirection: 'row',
         alignItems: 'center',
     },
     avatarContainer: {
-        marginTop: 50, // add margin top
-        width: 100,
-        height: 100,
+        marginTop: 30,
+        width: 70,
+        height: 90,
         borderRadius: 1,
         overflow: 'hidden',
-      },
-      
+    },
     avatar: {
         width: '70%',
         height: '90%',
