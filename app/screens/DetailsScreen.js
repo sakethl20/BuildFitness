@@ -28,7 +28,7 @@ function DetailsScreen() {
             options={{
                 title: 'Profile',
                 headerStyle: {
-                backgroundColor: 'gray',
+                backgroundColor: 'orange',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {

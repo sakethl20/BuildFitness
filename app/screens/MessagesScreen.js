@@ -77,16 +77,18 @@ const styles = StyleSheet.create({
         fontWeight: 'fine',
       },
     header: {
-        padding: 40,
+        padding: 10,
         flexDirection: 'row',
         alignItems: 'center',
     },
     avatarContainer: {
-        width: 70,
-        height: 90,
+        marginTop: 50, // add margin top
+        width: 100,
+        height: 100,
         borderRadius: 1,
         overflow: 'hidden',
-    },
+      },
+      
     avatar: {
         width: '70%',
         height: '90%',
