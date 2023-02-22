@@ -14,7 +14,7 @@ function DetailsScreen() {
             options={{
                 title: 'Workouts',
                 headerStyle: {
-                backgroundColor: 'gray',
+                backgroundColor: 'orange',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -28,7 +28,7 @@ function DetailsScreen() {
             options={{
                 title: 'Chat',
                 headerStyle: {
-                backgroundColor: 'gray',
+                backgroundColor: 'orange',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {

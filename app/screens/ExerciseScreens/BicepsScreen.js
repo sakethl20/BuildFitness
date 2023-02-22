@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import {AsyncStorage} from '@react-native-async-storage/async-storage'
 
 function BicepsScreen({ navigation }) {
   const exercises = [
