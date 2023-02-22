@@ -74,13 +74,19 @@ function FeedScreen() {
         position: 'absolute',
         top: 0,
         left: 0,
-        padding: 10,
-        alignItems: 'flex-start', 
-    },
+        padding: 1, // add padding
+        margin: 8, // add margin
+        alignItems: 'flex-start',
+        backgroundColor: 'lightgray',
+        borderWidth: 1, // add border
+        borderColor: 'gray', // set border color
+        borderRadius: 5, // set border radius
+      },
+      
     logOutButton: {
-      paddingHorizontal: 5,
+      paddingHorizontal: 10,
       paddingVertical: 5,
-      borderRadius: 10,
+      borderRadius: 5,
     },
     buttonContainer: {
       flexDirection: 'row',
@@ -112,8 +118,8 @@ function FeedScreen() {
       fontWeight: 'bold',
     },
     buttonText2: {
-        color: 'blue',
-        fontSize: 18,
+        color: 'gray',
+        fontSize: 15,
         fontWeight: 'fine',
       },
   });

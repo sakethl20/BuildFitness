@@ -26,9 +26,9 @@ function DetailsScreen() {
             name="Messages" 
             component={MessagesScreen} 
             options={{
-                title: 'Chat',
+                title: 'Profile',
                 headerStyle: {
-                backgroundColor: 'orange',
+                backgroundColor: 'gray',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {

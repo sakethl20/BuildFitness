@@ -3,7 +3,6 @@ import { StyleSheet, Text, Image, View, Button, ImageBackground, KeyboardAvoidin
 import { StatusBar } from 'expo-status-bar';
 import { auth } from '../../Firebase/firebase';
 import { useNavigation } from '@react-navigation/native';
-import {AsyncStorage} from '@react-native-async-storage/async-storage'
 
 
 function HomeScreen() {
@@ -15,7 +14,7 @@ function HomeScreen() {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
-                navigation.navigate("Details")
+                navigation.replace("Details")
             }
         }) 
 
@@ -102,18 +101,6 @@ const styles2 = StyleSheet.create({
         paddingVertical: 12,
         borderRadius: 10,
         marginTop: 5,
-    },
-    buttonContainer: {
-
-    },
-    button: {
-
-    },
-    buttonOutLine: {
-
-    },
-    buttonOutLineText: {
-
     },
 })
 

@@ -90,7 +90,7 @@ function ChestScreen() {
           borderBottomColor: '#ccc',
         },
         buttonText: {
-          color: 'blue',
+          color: 'gray',
           fontSize: 17,
         },
         searchBar: {
