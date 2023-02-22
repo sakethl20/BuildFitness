@@ -1,8 +1,10 @@
-import React from 'react';
-import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 
 function HamstringsScreen({navigation}) {
-    
+
+    const [searchTerm, setSearchTerm] = useState('');
+
     const exercises = [
         'Barbell stiff-legged deadlift',
         'Barbell Romanian deadlift',
@@ -27,12 +29,28 @@ function HamstringsScreen({navigation}) {
         'Swiss ball leg curl',
         'Trap bar deadlift',
         'Wide stance squat',
-      ];
+    ];
+
+    const [searchQuery, setSearchQuery] = useState('');
+      
+    const filteredExercises = exercises.filter(exercise =>
+      exercise.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    
+    const handleSearch = (text) => {
+      setSearchQuery(text);
+    }
       
     return (
         <View style={styles.container}>
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Search exercises"
+            value={searchQuery}
+            onChangeText={handleSearch}
+          />
           <ScrollView style={styles.scrollView}>
-            {exercises.map((exercise, index) => (
+            {filteredExercises.map((exercise, index) => (
               <View style={styles.buttonContainer} key={index}>
                 <Text style={styles.buttonText}>{exercise}</Text>
               </View>
@@ -66,6 +84,15 @@ const styles = StyleSheet.create({
     buttonText: {
       color: 'blue',
       fontSize: 17,
+    },
+    searchInput: {
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      borderRadius: 10,
+      padding: 10,
+      margin: 10,
+      width: '90%',
     },
   });
 

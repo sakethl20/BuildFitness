@@ -1,8 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 
 function ForearmsScreen({navigation}) {
-    
+    const [searchText, setSearchText] = useState('');
     const exercises = [
         'Behind the back wrist curls',
         'Dumbbell finger curl',
@@ -36,45 +36,62 @@ function ForearmsScreen({navigation}) {
         'Wrist roller',
         'Zottman curl',
     ];
-    
+
+    const filteredExercises = exercises.filter(exercise => exercise.toLowerCase().includes(searchText.toLowerCase()));
+
     return (
         <View style={styles.container}>
-          <ScrollView style={styles.scrollView}>
-            {exercises.map((exercise, index) => (
-              <View style={styles.buttonContainer} key={index}>
-                <Text style={styles.buttonText}>{exercise}</Text>
-              </View>
-            ))}
-          </ScrollView>
+            <TextInput
+                style={styles.searchBar}
+                value={searchText}
+                onChangeText={text => setSearchText(text)}
+                placeholder="Search exercises"
+            />
+            <ScrollView style={styles.scrollView}>
+                {filteredExercises.map((exercise, index) => (
+                    <View style={styles.buttonContainer} key={index}>
+                        <Text style={styles.buttonText}>{exercise}</Text>
+                    </View>
+                ))}
+            </ScrollView>
         </View>
-      );
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingTop: 30,
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 30,
+    },
+    searchBar: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 5,
+        width: '90%',
+        paddingHorizontal: 10,
+        marginBottom: 10,
     },
     title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
     },
     scrollView: {
-      width: '100%',
-      paddingHorizontal: 20,
+        width: '100%',
+        paddingHorizontal: 20,
     },
     buttonContainer: {
-      paddingVertical: 14,
-      borderBottomWidth: 1,
-      borderBottomColor: '#ccc',
+        paddingVertical: 14,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
     },
     buttonText: {
-      color: 'blue',
-      fontSize: 17,
+        color: 'blue',
+        fontSize: 17,
     },
-  });
+});
 
 export default ForearmsScreen;
