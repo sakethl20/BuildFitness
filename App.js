@@ -52,6 +52,11 @@ export default function App() {
           name="Messages" 
           component={MessagesScreen} 
         />
+
+
+
+
+        {/* Import main muscle group screens */}
         <Stack.Screen 
           name="Chest" 
           component={ChestScreen} 
