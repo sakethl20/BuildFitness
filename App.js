@@ -93,7 +93,7 @@ export default function App() {
           options={{
             title: 'Chest',
             headerStyle: {
-              backgroundColor: 'coral',
+              backgroundColor: 'lightcoral',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
