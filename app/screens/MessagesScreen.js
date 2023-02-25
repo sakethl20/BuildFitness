@@ -5,6 +5,7 @@ import {auth} from '../../Firebase/firebase';
 function MessagesScreen({navigation}) {
 
     const handleSignOut = () => {
+        console.log(`Signed out: ${auth.currentUser?.email}`);
         auth
         .signOut()
         .then(() => {
