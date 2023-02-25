@@ -15,18 +15,11 @@ function MessagesScreen({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <View style={styles.logOutContainer}>
-                    <TouchableOpacity 
-                        style={styles.logOutButton}
-                        onPress={handleSignOut}>
-                        <Text style={styles.buttonText2}>Logout</Text>
-                    </TouchableOpacity>
-                </View>
                 <View style={styles.avatarContainer}>
-                <Image style={styles.avatar} source={{ uri: 'https://cdn-icons-png.flaticon.com/512/5146/5146829.png' }} />
+                    <Image style={styles.avatar} source={{ uri: 'https://cdn-icons-png.flaticon.com/512/5146/5146829.png' }} />
                 </View>
                 <View style={styles.userInfoContainer}>
-                <Text style={styles.userName}>{auth.currentUser?.email}</Text>
+                    <Text style={styles.userName}>{auth.currentUser?.email}</Text>
                 </View>
             </View>
             <View style={styles.section}>
@@ -44,6 +37,13 @@ function MessagesScreen({navigation}) {
                     <Text style={styles.exerciseName}>Deadlifts</Text>
                 </TouchableOpacity>
             </View>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity 
+                    style={styles.button}
+                    onPress={handleSignOut}>
+                    <Text style={styles.buttonText2}>Logout</Text>
+                </TouchableOpacity>
+            </View>
         </View>
   );
 }
@@ -53,27 +53,34 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F8F8F8',
     },
-    logOutContainer: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        padding: 1, 
-        margin: 8, 
-        alignItems: 'flex-start',
-        backgroundColor: 'lightgray',
-        borderWidth: 1, 
-        borderColor: 'gray', 
-        borderRadius: 5, 
-      },
-      logOutButton: {
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        borderRadius: 5,
-      },
       buttonText2: {
-        color: 'gray',
-        fontSize: 15,
-        fontWeight: 'fine',
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
+      },
+      buttonContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
+        width: '100%',
+      },
+      button: {
+        backgroundColor: 'lightsalmon',
+        paddingHorizontal: 40,
+        paddingVertical: 17,
+        borderRadius: 18,
+        marginVertical: 10,
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.5)',
+        borderBottomColor: 'rgba(0, 0, 0, 0.5)',
+        borderBottomWidth: 1,
       },
     header: {
         padding: 30,
@@ -81,7 +88,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     avatarContainer: {
-        marginTop: 30,
+        marginTop: 15,
         width: 70,
         height: 90,
         borderRadius: 1,
@@ -104,7 +111,7 @@ const styles = StyleSheet.create({
         color: '#777',
     },
     section: {
-        marginTop: 20,
+        marginTop: 0,
         backgroundColor: '#FFF',
         padding: 20,
     },

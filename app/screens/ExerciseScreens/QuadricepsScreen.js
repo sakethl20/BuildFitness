@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function QuadricepsScreen({navigation}) {
 
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc',
   },
   buttonText: {
-    color: 'blue',
+    color: 'darkblue',
     fontSize: 17,
   },
   searchInput: {

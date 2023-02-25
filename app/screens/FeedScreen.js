@@ -17,13 +17,6 @@ function FeedScreen() {
 
     return (  
       <View style={styles.container}>
-        <View style={styles.logOutContainer}>
-            <TouchableOpacity 
-                style={styles.logOutButton}
-                onPress={handleSignOut}>
-                <Text style={styles.buttonText2}>Logout</Text>
-            </TouchableOpacity>
-        </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chest')}>
             <Text style={styles.buttonText}>Chest</Text>
@@ -70,24 +63,6 @@ function FeedScreen() {
       alignItems: 'center',
       justifyContent: 'center',
     },
-    logOutContainer: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        padding: 1, // add padding
-        margin: 8, // add margin
-        alignItems: 'flex-start',
-        backgroundColor: 'lightgray',
-        borderWidth: 1, // add border
-        borderColor: 'gray', // set border color
-        borderRadius: 5, // set border radius
-      },
-      
-    logOutButton: {
-      paddingHorizontal: 10,
-      paddingVertical: 5,
-      borderRadius: 5,
-    },
     buttonContainer: {
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -95,11 +70,12 @@ function FeedScreen() {
       width: '100%',
     },
     button: {
-      backgroundColor: 'orange',
-      paddingHorizontal: 27,
-      paddingVertical: 17,
-      borderRadius: 10,
+      backgroundColor: 'lightsalmon',
+      paddingHorizontal: 26,
+      paddingVertical: 19,
+      borderRadius: 18,
       marginVertical: 30,
+      marginHorizontal: 2,
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
@@ -114,7 +90,7 @@ function FeedScreen() {
     },
     buttonText: {
       color: 'white',
-      fontSize: 18,
+      fontSize: 20,
       fontWeight: 'bold',
     },
     buttonText2: {

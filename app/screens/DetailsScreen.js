@@ -14,11 +14,11 @@ function DetailsScreen() {
             options={{
                 title: 'Workouts',
                 headerStyle: {
-                backgroundColor: 'orange',
+                backgroundColor: 'coral',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
-                fontWeight: 'bold',
+                fontWeight: 'regular',
                 },
             }}
         />
@@ -28,11 +28,11 @@ function DetailsScreen() {
             options={{
                 title: 'Profile',
                 headerStyle: {
-                backgroundColor: 'orange',
+                backgroundColor: 'coral',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
-                fontWeight: 'bold',
+                fontWeight: 'regular',
                 },
             }}
         />

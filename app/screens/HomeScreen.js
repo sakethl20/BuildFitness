@@ -44,30 +44,29 @@ function HomeScreen() {
     return (
       <View style={styles.container}>
         <ImageBackground source={{ uri: "https://wallpapers.com/images/hd/chris-bumstead-speed-bag-in-backdrop-ch17w7eqyveckhfr.jpg" }} style={styles.backgroundImage}>
+              {/* <Image
+                source={require('../assets/My project.jpg')}
+                style={styles.logo}
+              /> */}
             <KeyboardAvoidingView
                 style={styles2.container}
                 behavior = "padding"
             >
-                <View style={styles2.inputContainer}>
-                    <TextInput
-                      placeholder="Email"
-                        Value={email}
-                        onChangeText={text => setEmail(text)}
-                        style={styles2.input}
-                    />
-                    <TextInput
-                        placeholder="Password"
-                        Value={password}
-                        onChangeText={text => setPassword(text)}
-                        style={styles2.input}
-                        secureTextEntry
-                    />
-                </View>
-                <View>
-                    <Text>
-                                      
-                    </Text>
-                </View>
+              <View style={styles2.inputContainer}>
+                  <TextInput
+                    placeholder="Email"
+                    Value={email}
+                    onChangeText={text => setEmail(text)}
+                    style={styles2.input}
+                  />
+                  <TextInput
+                    placeholder="Password"
+                    Value={password}
+                    onChangeText={text => setPassword(text)}
+                    style={styles2.input}
+                    secureTextEntry
+                  />
+              </View>
             </KeyboardAvoidingView>
         </ImageBackground>
         <TouchableOpacity 
@@ -93,7 +92,7 @@ const styles2 = StyleSheet.create({
     },
     inputContainer: {
         width: "80%",
-        height: 100
+        height: 110
     },
     input: {
         backgroundColor: "white",
@@ -124,12 +123,19 @@ const styles2 = StyleSheet.create({
       textAlign: 'center',
       margin: 30,
     },
+    logo: {
+      width: 200,
+      height: 200,
+      marginBottom: 20,
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
     buttonContainer: {
       position: 'flex-end',
     //   bottom: 0,
       width: '100%',
       alignSelf: 'flex-end',
-      backgroundColor: "darkorange",
+      backgroundColor: "lightsalmon",
       borderRadius: 2,
       height: 50,
       alignItems: 'center',
@@ -142,7 +148,7 @@ const styles2 = StyleSheet.create({
       //   bottom: 0,
         width: '100%',
         alignSelf: 'flex-end',
-        backgroundColor: "orange",
+        backgroundColor: "coral",
         borderRadius: 2,
         height: 50,
         alignItems: 'center',

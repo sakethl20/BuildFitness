@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function AbsScreen({navigation}) {
     
@@ -36,6 +37,7 @@ function AbsScreen({navigation}) {
         'Weighted sit-up',
         'Windshield wiper',
       ];
+      
       
     
       const [searchQuery, setSearchQuery] = useState('');
@@ -88,7 +90,7 @@ function AbsScreen({navigation}) {
         borderBottomColor: '#ccc',
       },
       buttonText: {
-        color: 'blue',
+        color: 'darkblue',
         fontSize: 17,
       },
       searchBar: {

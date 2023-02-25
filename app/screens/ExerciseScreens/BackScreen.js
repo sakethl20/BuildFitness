@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function BackScreen({navigation}) {
     
@@ -97,7 +98,7 @@ function BackScreen({navigation}) {
         borderBottomColor: '#ccc',
       },
       buttonText: {
-        color: 'blue',
+        color: 'darkblue',
         fontSize: 17,
       },
       searchBar: {

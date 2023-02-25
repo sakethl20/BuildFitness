@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Image, View, Button, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function ChestScreen() {
+  const navigation = useNavigation();
     const exercises = [
         'Barbell bench press',
         'Barbell decline bench press',
@@ -9,11 +11,13 @@ function ChestScreen() {
         'Barbell pullover',
         'Cable crossover',
         'Cable fly',
+        'Close grip push-ups',
         'Decline bench press machine',
         'Decline cable fly',
         'Decline cable press',
         'Decline dumbbell fly',
         'Decline dumbbell press',
+        'Diamond push-ups',
         'Dips',
         'Dumbbell bench press',
         'Dumbbell decline bench press',
@@ -27,7 +31,7 @@ function ChestScreen() {
         'Incline dumbbell fly',
         'Incline dumbbell press',
         'Machine fly',
-        'Medicine ball chest pass',
+        'Medicine ball chest press',
         'Plyometric push-ups',
         'Push-ups',
         'Single-arm cable crossover',
@@ -36,9 +40,9 @@ function ChestScreen() {
         'Single-arm dumbbell fly',
         'Swiss ball dumbbell press',
         'Wide grip push-ups',
-        'Close grip push-ups',
-        'Diamond push-ups',
         ];
+
+        // navigation = useNavigation();
 
         const [searchQuery, setSearchQuery] = useState('');
 
@@ -59,9 +63,10 @@ function ChestScreen() {
             />
             <ScrollView style={styles.scrollView}>
               {filteredExercises.map((exercise, index) => (
-                <View style={styles.buttonContainer} key={index}>
-                  <Text style={styles.buttonText}>{exercise}</Text>
-                </View>
+                <TouchableOpacity style={styles.buttonContainer} key={index} onPress={() => navigation.navigate(exercise)}>
+                  <Text 
+                  style={styles.buttonText}>{exercise}</Text>
+                </TouchableOpacity>
               ))}
             </ScrollView>
           </View>
@@ -90,7 +95,7 @@ function ChestScreen() {
           borderBottomColor: '#ccc',
         },
         buttonText: {
-          color: 'gray',
+          color: 'darkblue',
           fontSize: 17,
         },
         searchBar: {
