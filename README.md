@@ -1,2 +1,2 @@
 # BuildFitness
-fitness app
+Ongoing personal project - fitness app
